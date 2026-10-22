@@ -69,6 +69,15 @@ module.exports = async (req, res) => {
   const isGet = req.method === 'GET';
   const cacheKey = path + search;
 
+  if (path === '/') {
+    res.status(200).json({
+      service: 'opensubtitles-proxy',
+      usage: 'GET /api/v1/...  |  GET /dl/...',
+      upstream: 'https://api.opensubtitles.com',
+    });
+    return;
+  }
+
   if (isGet && cache.has(cacheKey)) {
     const hit = cache.get(cacheKey);
     if (Date.now() < hit.exp) {
