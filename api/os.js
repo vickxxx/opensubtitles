@@ -79,7 +79,12 @@ module.exports = async (req, res) => {
     cache.delete(cacheKey);
   }
 
-  const headers = { 'User-Agent': process.env.OS_UA || 'opensubtitles-proxy/1.0' };
+  const headers = {
+    'User-Agent':
+      process.env.OS_UA ||
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    Accept: 'application/json',
+  };
   for (const h of FORWARD_HEADERS) {
     if (req.headers[h]) headers[h] = req.headers[h];
   }
