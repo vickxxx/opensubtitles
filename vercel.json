@@ -6,6 +6,10 @@
       "destination": "https://dl.opensubtitles.org/:path*"
     },
     {
+      "source": "/",
+      "destination": "/api/os.js"
+    },
+    {
       "source": "/:path*",
       "destination": "/api/os.js"
     }
