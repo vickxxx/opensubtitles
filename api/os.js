@@ -95,6 +95,10 @@ module.exports = async (req, res) => {
   }
 
   try {
+    if (req.headers['x-dbg'] === '1') {
+      res.status(200).json({ url: req.url, path, search, target: UPSTREAM + path + search });
+      return;
+    }
     const upstream = await fetch(UPSTREAM + path + search, {
       method: req.method,
       headers,
