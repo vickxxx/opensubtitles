@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/dl/:path*",
+      "destination": "https://dl.opensubtitles.org/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/api/os.js"
+    }
+  ]
+}

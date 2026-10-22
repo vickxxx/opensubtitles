@@ -1,0 +1,9 @@
+{
+  "name": "opensubtitles-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OpenSubtitles API proxy on Vercel",
+  "engines": {
+    "node": ">=20"
+  }
+}
